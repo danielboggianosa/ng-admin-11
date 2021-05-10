@@ -83,8 +83,8 @@ export class FormsComponent implements OnInit {
   @Output() onInputChange = new EventEmitter<any>();
   @Output() onCancel = new EventEmitter<any>();
   @Input() buttonText = 'Enviar Datos'
-  @Input() buttonClass:string
-  @Input() cancelButton:boolean=false
+  @Input() btnColor:string = 'primary'
+  @Input() cancelBtn:boolean = false
 
   // fin de propiedades del formulario
 

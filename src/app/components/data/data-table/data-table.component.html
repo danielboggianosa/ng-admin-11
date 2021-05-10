@@ -1,7 +1,7 @@
 <div class="row mb-2">
     <div class="col-md-6">
         <app-button-dropdown
-        [text]="'Rows to Show'"
+        [text]="'Rows to Show: '+rows"
         [actions]="actions"
         [color]="'light'"
         (actionClick)="limitData($event)"
@@ -24,26 +24,45 @@
     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
         <thead>
             <tr>
-                <th *ngFor="let head of headers" [class.invisible]="!head.visible" (click)="setOrder(head.key)">
-                    <span class="text-right">
-                        <i *ngIf="head.sortable" class="fas" [ngClass]="{'fa-sort text-gray':head.order=='', 'fa-sort-up':head.order=='asc', 'fa-sort-down':head.order=='desc'}"></i>
-                    </span>
-                    <span class="text-left"> {{head.title}} </span>
+                <th *ngFor="let head of headers" [class.d-none]="!head.visible" (click)="setOrder(head.key)" class="pointer">
+                    <div class="d-flex justify-content-between">
+                        <span class="text-left"> {{head.title}} </span>
+                        <span class="text-right">
+                            <i *ngIf="head.sortable" class="fas" [ngClass]="{'fa-sort text-gray':head.order=='', 'fa-sort-up':head.order=='asc', 'fa-sort-down':head.order=='desc'}"></i>
+                        </span>
+                    </div>
                 </th>
             </tr>
         </thead>
         <tbody>
             <tr *ngFor="let data of tableData">
-                <td *ngFor="let head of headers">{{data[head.key]}}</td>
+                <td *ngFor="let head of headers" [class.d-none]="!head.visible">
+                    <span *ngIf="head.key != 'actions'">{{data[head.key]}}</span>
+                    <span *ngIf="head.key == 'actions' && head.visible" class="d-flex justify-content-between">
+                        <span *ngFor="let option of  head.options">
+                            <span *ngIf="option=='view'" [attr.title]="option.toUpperCase()">
+                                <app-button-circle [icon]="'fas fa-eye'" [color]="'btn-success'" [size]="'btn-sm'"></app-button-circle>
+                            </span>
+                            <span *ngIf="option=='edit'" [attr.title]="option.toUpperCase()">
+                                <app-button-circle [icon]="'fas fa-edit'" [color]="'btn-primary'" [size]="'btn-sm'"></app-button-circle>
+                            </span>
+                            <span *ngIf="option=='delete'" [attr.title]="option.toUpperCase()">
+                                <app-button-circle [icon]="'fas fa-trash'" [color]="'btn-danger'" [size]="'btn-sm'"></app-button-circle>
+                            </span>
+                        </span>
+                    </span>
+                </td>
             </tr>
         </tbody>
         <tfoot>
             <tr>
-                <th *ngFor="let head of headers" [class.invisible]="!head.visible" (click)="setOrder(head.key)">
-                    <span class="text-right">
-                        <i *ngIf="head.sortable" class="fas" [ngClass]="{'fa-sort text-gray':head.order=='', 'fa-sort-up':head.order=='asc', 'fa-sort-down':head.order=='desc'}"></i>
-                    </span>
-                    <span class="text-left">{{head.title}} </span>
+                <th *ngFor="let head of headers" [class.d-none]="!head.visible" (click)="setOrder(head.key)" class="pointer">
+                    <div class="d-flex justify-content-between">
+                        <span class="text-left"> {{head.title}} </span>
+                        <span class="text-right">
+                            <i *ngIf="head.sortable" class="fas" [ngClass]="{'fa-sort text-gray':head.order=='', 'fa-sort-up':head.order=='asc', 'fa-sort-down':head.order=='desc'}"></i>
+                        </span>
+                    </div>
                 </th>
             </tr>
         </tfoot>
@@ -54,6 +73,6 @@
         Showing {{rows}} of {{total}} rows
     </div>
     <div class="col-md-6">
-        <app-pagination></app-pagination>
+        <app-pagination (onChange)="changePage($event)" [total]="pages"></app-pagination>
     </div>
 </div>

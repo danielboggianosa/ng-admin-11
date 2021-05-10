@@ -14,6 +14,7 @@ export class DataTableComponent implements OnInit {
     {id: 4, key: "city", title: "City", visible: true, sortable: true, order:''},
     {id: 5, key: "start", title: "Start", visible: true, sortable: true, order:''},
     {id: 6, key: "salary", title: "Salary", visible: true, sortable: true, order:''},
+    {id: 7, key: "actions", title: "Actions", visible: true, sortable: false, order:'', options:['delete', 'edit', 'view']},
   ]
   @Input() tableData:Array<Object> = []
   search:string = ''
@@ -25,6 +26,7 @@ export class DataTableComponent implements OnInit {
   ]
   rows:number = 0
   total:number = 0
+  pages:number = 1
   constructor() { }
 
   ngOnInit(): void {
@@ -48,31 +50,39 @@ export class DataTableComponent implements OnInit {
       if(a[key] < b[key]) return sort * (-1)
       return 0
     })
-    this.tableData = data
+    this.tableData = data.slice(0, this.rows)
   }
 
   loadData(){
     this.tableData = data
     this.rows = this.tableData.length
     this.total = data.length
+    this.pages = Math.floor(this.total / this.rows)
+    
   }
 
   filterTable(){
-    this.tableData.filter(d => {
-      if(d['name'].toLowerCase().includes(this.search)) return true
-      else return false
+    // this.tableData = data.slice(0, this.rows)
+    let filtered = data.filter(d => {
+      let found = false
+      Object.keys(d).map(key => {
+        if(d[key].toLowerCase().includes(this.search)) found = true
+      })
+      return found
     })
-    // this.tableData = data
+    this.tableData = filtered.slice(0, this.rows)
   }
 
   limitData(n){
     this.tableData = data.slice(0, n)
     this.rows = n
     this.total = data.length
+    this.pages = Math.floor(this.total / this.rows)
   }
 
   changePage(p){
-    
+    console.log(p)
+    this.tableData = data.slice((p-1)*this.rows, p*this.rows)
   }
 
 }

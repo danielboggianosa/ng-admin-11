@@ -52,7 +52,8 @@ import { FullCalendarModule } from '@fullcalendar/angular';
 import dayGridPlugin from '@fullcalendar/daygrid'; // a plugin
 import interactionPlugin from '@fullcalendar/interaction';
 import { FormsComponent } from './components/forms/forms.component';
-import { ProgressBarComponent } from './components/bars/progress-bar/progress-bar.component'; // a plugin
+import { ProgressBarComponent } from './components/bars/progress-bar/progress-bar.component';
+import { CardTabsComponent } from './components/cards/card-tabs/card-tabs.component'; // a plugin
 
 FullCalendarModule.registerPlugins([ // register FullCalendar plugins
   dayGridPlugin,
@@ -108,6 +109,7 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     AreaChartComponent,
     FormsComponent,
     ProgressBarComponent,
+    CardTabsComponent,
   ],
   imports: [
     BrowserModule,

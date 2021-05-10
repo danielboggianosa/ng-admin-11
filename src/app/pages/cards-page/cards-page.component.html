@@ -37,14 +37,21 @@
 
             <!-- Basic Card Example -->
             <app-card-basic></app-card-basic>
+
+            <!-- Tabs Card Example -->
+            <app-card-tabs></app-card-tabs>
         </div>
 
         <div class="col-lg-6">
             <!-- Default Card Example -->
-            <app-card-dropdown></app-card-dropdown>
+            <app-card-dropdown [title]="'Dropdown Header'" [description]="''">
+                <p>This is an example of a custom card with a dropdown action inside of the card header. The card's overflow is set to hidden, so your card body height should exceed the height of your dropdown menu.</p>
+            </app-card-dropdown>
 
             <!-- Basic Card Example -->
             <app-card-collapsable></app-card-collapsable>
         </div>
+        
     </div>
+
 </div>

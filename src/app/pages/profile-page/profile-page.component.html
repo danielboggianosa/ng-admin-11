@@ -1,1 +1,24 @@
-<p>profile-page works!</p>
+ <!-- Page Heading -->
+ <h1 class="h3 mb-4 text-gray-800">Profile</h1>
+
+ <div class="row">
+    <div class="col-xl-4 col-lg-5">
+        <app-card-basic [title]="'Profile Picture'" [description]="''">
+            <div class="text-center">
+                <img src="assets/img/undraw_profile.svg" class="img-account-profile rounded-circle mb-2" alt="">
+                <div class="small font-italic text-muted mb-4">JPG or PNG no larger than 5 MB</div>
+                <form>
+                    <label for="picture">
+                        <app-button-split [text]="'Upload image'" [icon]="'fas fa-upload'"></app-button-split>
+                        <input type="file" name="picture" id="picture" class="d-none" (change)="uploadImage($event)">
+                    </label>
+                </form>
+            </div>
+        </app-card-basic>
+    </div>
+    <div class="col-xl-8 col-lg-7">
+        <app-card-basic [title]="'Account Details'" [description]="''">
+            <app-forms></app-forms>
+        </app-card-basic>
+    </div>
+ </div>

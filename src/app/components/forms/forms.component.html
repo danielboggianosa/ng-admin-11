@@ -38,10 +38,10 @@
     </div>
     <div class="col-12 row">
         <div class="col">
-            <button type="button" class="btn btn-secondary" (click)="cancel()">Cancelar</button>
+            <button type="button" class="btn btn-secondary" (click)="cancel()" *ngIf="cancelBtn">Cancelar</button>
         </div>
         <div class="col text-right">
-            <button type="submit" class="{{buttonClass || 'btn btn-success'}}" (click)="submitAction()">{{buttonText}}</button>
+            <button type="submit" class="btn btn-{{btnColor}}" (click)="submitAction()">{{buttonText}}</button>
         </div>
     </div>
 
