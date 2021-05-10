@@ -1,0 +1,50 @@
+<!-- Page Heading -->
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <h1 class="h3 mb-0 text-gray-800">Cards</h1>
+</div>
+<div class="row">
+
+    <!-- Earnings (Monthly) Card Example -->
+    <div class="col-xl-3 col-md-6 mb-4">
+        <app-card-border-left></app-card-border-left>
+    </div>
+
+    <!-- Earnings (Annual) Card Example -->
+    <div class="col-xl-3 col-md-6 mb-4">
+        <app-card-border-left
+        [color]="'success'"
+        [text]="'Earnings (Annual)'"
+        [icon]="'fas fa-dollar-sign'"
+        [currency]="'$215,000'"
+        ></app-card-border-left>
+    </div>
+
+    <!-- Tasks Card Example -->
+    <div class="col-xl-3 col-md-6 mb-4">
+        <app-card-progress></app-card-progress>
+    </div>
+
+    <!-- Pending Requests Card Example -->
+    <div class="col-xl-3 col-md-6 mb-4">
+        <app-card-requests></app-card-requests>
+    </div>
+
+    <div class="row">
+
+        <div class="col-lg-6">
+            <!-- Default Card Example -->
+            <app-card-default></app-card-default>
+
+            <!-- Basic Card Example -->
+            <app-card-basic></app-card-basic>
+        </div>
+
+        <div class="col-lg-6">
+            <!-- Default Card Example -->
+            <app-card-dropdown></app-card-dropdown>
+
+            <!-- Basic Card Example -->
+            <app-card-collapsable></app-card-collapsable>
+        </div>
+    </div>
+</div>

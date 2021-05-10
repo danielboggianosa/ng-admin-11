@@ -1,0 +1,171 @@
+<h1 class="h3 mb-4 text-gray-800">Buttons</h1>
+<div class="row">
+
+    <div class="col-lg-6">
+
+        <!-- Circle Buttons -->
+        <app-card-basic
+        [title]="'Circle Buttons'"
+        [description]="''"
+        >
+            <p>Use Font Awesome Icons (included with this theme package) along with the circle
+                buttons as shown in the examples below!</p>
+            <!-- Circle Buttons (Default) -->
+            <div class="mb-2">
+                <code>.btn-circle</code>
+            </div>
+            <app-button-circle
+            [color]="'btn-primary'"
+            [icon]="'fab fa-facebook-f'"
+            ></app-button-circle>
+            <app-button-circle
+            [color]="'btn-success'"
+            [icon]="'fas fa-check'"
+            ></app-button-circle>
+            <app-button-circle
+            [color]="'btn-info'"
+            [icon]="'fas fa-info-circle'"
+            ></app-button-circle>
+            <app-button-circle
+            [color]="'btn-warning'"
+            [icon]="'fas fa-exclamation-triangle'"
+            ></app-button-circle>
+            <app-button-circle
+            [color]="'btn-danger'"
+            [icon]="'fas fa-trash'"
+            ></app-button-circle>
+
+            <!-- Circle Buttons (Small) -->
+            <div class="mt-4 mb-2">
+                <code>.btn-circle .btn-sm</code>
+            </div>
+            
+            <app-button-circle
+            [color]="'btn-primary'"
+            [icon]="'fab fa-facebook-f'"
+            [size]="'btn-sm'"
+            ></app-button-circle>
+            <app-button-circle
+            [color]="'btn-success'"
+            [icon]="'fas fa-check'"
+            [size]="'btn-sm'"
+            ></app-button-circle>
+            <app-button-circle
+            [color]="'btn-info'"
+            [icon]="'fas fa-info-circle'"
+            [size]="'btn-sm'"
+            ></app-button-circle>
+            <app-button-circle
+            [color]="'btn-warning'"
+            [icon]="'fas fa-exclamation-triangle'"
+            [size]="'btn-sm'"
+            ></app-button-circle>
+            <app-button-circle
+            [color]="'btn-danger'"
+            [icon]="'fas fa-trash'"
+            [size]="'btn-sm'"
+            ></app-button-circle>
+
+            <!-- Circle Buttons (Large) -->
+            <div class="mt-4 mb-2">
+                <code>.btn-circle .btn-lg</code>
+            </div>
+            <app-button-circle
+            [color]="'btn-primary'"
+            [icon]="'fab fa-facebook-f'"
+            [size]="'btn-lg'"
+            ></app-button-circle>
+            <app-button-circle
+            [color]="'btn-success'"
+            [icon]="'fas fa-check'"
+            [size]="'btn-lg'"
+            ></app-button-circle>
+            <app-button-circle
+            [color]="'btn-info'"
+            [icon]="'fas fa-info-circle'"
+            [size]="'btn-lg'"
+            ></app-button-circle>
+            <app-button-circle
+            [color]="'btn-warning'"
+            [icon]="'fas fa-exclamation-triangle'"
+            [size]="'btn-lg'"
+            ></app-button-circle>
+            <app-button-circle
+            [color]="'btn-danger'"
+            [icon]="'fas fa-trash'"
+            [size]="'btn-lg'"
+            ></app-button-circle>
+        </app-card-basic>
+
+        <!-- Brand Buttons -->
+        <app-card-basic
+        [title]="'Brand Buttons'"
+        [description]="''"
+        >
+            <p>Google and Facebook buttons are available featuring each company's respective
+                brand color. They are used on the user login and registration pages.</p>
+            <p>You can create more custom buttons by adding a new color variable in the
+                <code>_variables.scss</code> file and then using the Bootstrap button variant
+                mixin to create a new style, as demonstrated in the <code>_buttons.scss</code>
+                file.</p>
+            <app-button-brand></app-button-brand>
+            <app-button-brand
+            [icon]="'fab fa-facebook-f fa-fw'"
+            [brand]="'btn-facebook'"
+            [content]="'.btn-facebook'"
+            ></app-button-brand>
+        </app-card-basic>
+
+    </div>
+
+    <div class="col-lg-6">
+
+        <app-card-basic
+        [title]="'Split Buttons with Icon'"
+        [description]="''"
+        >
+            <p>Works with any button colors, just use the <code>.btn-icon-split</code> class and the markup in the examples below. The examples below also use the
+            <code>.text-white-50</code> helper class on the icons for additional styling, but it is not required.</p>
+            <app-button-split></app-button-split>
+            <div class="my-2"></div>
+            <app-button-split
+            [color]="'btn-success'"
+            [icon]="'fas fa-check'"
+            [text]="'Split Button Success'">
+            </app-button-split>
+            <div class="my-2"></div>
+            <app-button-split
+            [color]="'btn-info'"
+            [icon]="'fas fa-info-circle'"
+            [text]="'Split Button Info'"></app-button-split>
+            <div class="my-2"></div>
+            <app-button-split
+            [color]="'btn-warning'"
+            [icon]="'fas fa-exclamation-triangle'"
+            [text]="'Split Button Warning'"></app-button-split>
+            <div class="my-2"></div>
+            <app-button-split
+            [color]="'btn-danger'"
+            [icon]="'fas fa-trash'"
+            [text]="'Split Button Danger'"></app-button-split>
+            <div class="my-2"></div>
+            <app-button-split
+            [color]="'btn-secondary'"
+            [icon]="'fas fa-arrow-right'"
+            [text]="'Split Button Secondary'"></app-button-split>
+            <div class="my-2"></div>
+            <app-button-split
+            [color]="'btn-light'"
+            [icon]="'fas fa-arrow-right'"
+            [text]="'Split Button Light'"></app-button-split>
+            
+            <div class="mb-4"></div>
+            <p>Also works with small and large button classes!</p>
+            <app-button-split [size]="'btn-sm'" [text]="'Split Button Small'" ></app-button-split>
+            <div class="my-2"></div>
+            <app-button-split [size]="'btn-lg'" [text]="'Split Button Large'" ></app-button-split>
+        </app-card-basic>
+
+    </div>
+
+</div>

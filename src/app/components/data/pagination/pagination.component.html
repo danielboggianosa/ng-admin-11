@@ -1,0 +1,14 @@
+<nav aria-label="Page navigation example">
+    <ul class="pagination">
+      <li class="page-item"><button class="page-link" (click)="handleClick(1)"><i class="fas fa-angle-double-left"></i></button></li>
+      <li class="page-item"><button class="page-link" (click)="handleClick('previous')"><i class="fas fa-angle-left"></i></button></li>
+      <li class="page-item"><app-button-dropdown
+        [text]="current"
+        [color]="'light'"
+        [actions]="pages"
+        (actionClick)="handleClick($event)"
+        ></app-button-dropdown></li>
+      <li class="page-item"><button class="page-link" (click)="handleClick('next')"><i class="fas fa-angle-right"></i></button></li>
+      <li class="page-item"><button class="page-link" (click)="handleClick('last')"><i class="fas fa-angle-double-right"></i></button></li>
+    </ul>
+</nav>

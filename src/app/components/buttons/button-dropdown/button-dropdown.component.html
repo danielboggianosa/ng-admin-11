@@ -1,0 +1,11 @@
+<div class="dropdown mb-4" [ngClass]="{'no-arrow': !arrow}">
+    <button class="btn btn-{{color}} dropdown-toggle" type="button"
+        id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+        aria-expanded="false">
+        {{text}}
+    </button>
+    <div class="dropdown-menu animated--fade-in"
+        aria-labelledby="dropdownMenuButton">
+        <button class="dropdown-item" *ngFor="let action of actions" (click)="handleActionClick(action.text)">{{action.text}}</button>
+    </div>
+</div>
