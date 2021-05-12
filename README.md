@@ -1,6 +1,11 @@
 # SPbootstrapAdmin
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.10.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.10. The template is based on [SP Bootstrap Admin 2](https://startbootstrap.com/theme/sb-admin-2). It's been adapted and improved to
+
+You can find a demo of the [final result here](https://ngadmin.danielboggiano.com)
+
+[Español]
+Este proyecto está basado en el tema SP Bootsatra Admin 2. Fue adaptado para trabajar con Ángular 11.2.10. La descripción necesario para reutilizar cada uno de los componentes se encuentra en el código. Puedes encontrar una muestra del resultado final aquí: [ngadmin.danielboggiano.com](https://ngadmin.danielboggiano.com)
 
 ## Development server
 
