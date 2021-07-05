@@ -1,0 +1,67 @@
+<!-- Page Heading -->
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <h1 class="h3 mb-0 text-gray-800">Multiplicación</h1>
+</div>
+
+<!-- Content Row -->
+<div class="row">
+    <app-card-basic class="col" [title]="'Multiplicar:'" [description]="''">
+        <div class="row">
+            <div class="col-12 mb-4 row text-center">
+                <app-button-split [icon]="''" [iconContent]="correctos" [color]="'btn-success'" [text]="'Correctos'"
+                    class="col-xs-6 col-sm-6 mb-2" [size]="'btn-lg'"></app-button-split>
+                <app-button-split [icon]="''" [iconContent]="incorrectos" [color]="'btn-danger'" [text]="'Errores'"
+                    class="col-xs-6 col-sm-6" [size]="'btn-lg'"></app-button-split>
+            </div>
+            <div class="border rounded col-12 row mx-auto py-2 mb-4">
+                <div class="col-xs-4 col-sm-2 text-center">
+                    <app-button-circle [icon]="''" [color]="'btn-primary'" [size]="'btn-lg'" data-toggle="modal"
+                        data-target="#cifrasModal" title="Cambiar Cantidad de Cifras">
+                        {{numero}}</app-button-circle>
+                </div>
+                <div class="col-xs-2 col-sm-1 text-center"><i class="fa fa-times fa-3x "></i></div>
+                <div class="col-xs-4 col-sm-2 text-center">
+                    <app-button-circle [icon]="''" [color]="'btn-warning'" [size]="'btn-lg'" data-toggle="modal"
+                        data-target="#multiploModal">{{multiplo}}</app-button-circle>
+                </div>
+                <div class="col-xs-2 col-sm-1 text-center"><i class="fa fa-equals fa-3x"></i></div>
+                <div class="col-xs-12 col-sm-6 mx-auto">
+                    <form class="form-group text-center" (submit)="comprobar()">
+                        <div class="col-md-12 text-right">
+                            <form
+                                class="d-xs-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search"
+                                (submit)="comprobar()">
+                                <div class="input-group">
+                                    <input type="number" class="form-control bg-light border-0 btn-lg"
+                                        placeholder="Respuesta" [(ngModel)]="respuesta" name="respuesta">
+                                    <div class="input-group-append">
+                                        <button class="btn btn-success" type="submit">
+                                            <i class="fas fa-check fa-sm"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <h5 class="text-mutted text-danger" *ngIf="showRespuesta">La Respuesta correcta es: {{resultado}}</h5>
+        </div>
+    </app-card-basic>
+</div>
+
+<app-modal-basic [name]="'cifrasModal'" [header]="'Cifras'" [mainButtonText]="'Aceptar'"
+    (mainButtonClickEvent)="configurar($event)">
+    <form class="form-group">
+        <label for="cifras">Elige la cantidad de cifras:</label>
+        <input type="number" name="cifras" [(ngModel)]="cifras" class="form-control">
+    </form>
+</app-modal-basic>
+
+<app-modal-basic [name]="'multiploModal'" [header]="'Multiplo'" [mainButtonText]="'Aceptar'"
+    (mainButtonClickEvent)="configurar($event)">
+    <form class="form-group">
+        <label for="multiplo">Elige el multiplo:</label>
+        <input type="number" name="multiplo" [(ngModel)]="multiplo" class="form-control">
+    </form>
+</app-modal-basic>
