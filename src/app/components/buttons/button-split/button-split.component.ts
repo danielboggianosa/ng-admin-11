@@ -10,6 +10,7 @@ export class ButtonSplitComponent implements OnInit {
   @Input() color:string = 'btn-primary'
   @Input() size:string = ''
   @Input() icon:string = 'fas fa-flag'
+  @Input() iconContent:string = ''
   @Input() text:string = 'Split Button Primary'
   constructor() { }
 
