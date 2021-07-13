@@ -54,9 +54,7 @@ import interactionPlugin from '@fullcalendar/interaction';
 import { FormsComponent } from './components/forms/forms.component';
 import { ProgressBarComponent } from './components/bars/progress-bar/progress-bar.component';
 import { CardTabsComponent } from './components/cards/card-tabs/card-tabs.component';
-import { ButtonDateRangeComponent } from './components/buttons/button-date-range/button-date-range.component';
-import { MultiplicacionComponent } from './pages/aritmetica/multiplicacion/multiplicacion.component';
-import { ModalBasicComponent } from './components/modals/modal-basic/modal-basic.component'; // a plugin
+import { ButtonDateRangeComponent } from './components/buttons/button-date-range/button-date-range.component'; // a plugin
 
 FullCalendarModule.registerPlugins([ // register FullCalendar plugins
   dayGridPlugin,
@@ -114,8 +112,6 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     ProgressBarComponent,
     CardTabsComponent,
     ButtonDateRangeComponent,
-    MultiplicacionComponent,
-    ModalBasicComponent,
   ],
   imports: [
     BrowserModule,
