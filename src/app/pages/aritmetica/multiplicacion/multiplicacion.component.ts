@@ -27,16 +27,32 @@ export class MultiplicacionComponent implements OnInit {
 
   comprobar() {
     this.resultado = this.numero * this.multiplo
-    if (this.resultado === this.respuesta){
+    if (this.resultado === this.respuesta) {
       this.correctos++
       this.showRespuesta = false
+      this.playCorrectSound()
     }
-    else{
+    else {
       this.incorrectos++
       this.showRespuesta = true
+      this.playIncorrectSound()
     }
     this.configurar()
     this.respuesta = undefined
+  }
+
+  playCorrectSound() {
+    const audio = new Audio()
+    audio.src = "../../../assets/audio/correct.mp3";
+    audio.load();
+    audio.play();
+  }
+
+  playIncorrectSound() {
+    const audio = new Audio()
+    audio.src = "../../../assets/audio/incorrect.mp3";
+    audio.load();
+    audio.play();
   }
 
 }

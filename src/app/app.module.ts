@@ -56,7 +56,10 @@ import { ProgressBarComponent } from './components/bars/progress-bar/progress-ba
 import { CardTabsComponent } from './components/cards/card-tabs/card-tabs.component';
 import { ButtonDateRangeComponent } from './components/buttons/button-date-range/button-date-range.component';
 import { MultiplicacionComponent } from './pages/aritmetica/multiplicacion/multiplicacion.component';
-import { ModalBasicComponent } from './components/modals/modal-basic/modal-basic.component'; // a plugin
+import { ModalBasicComponent } from './components/modals/modal-basic/modal-basic.component';
+import { DivisionComponent } from './pages/aritmetica/division/division.component';
+import { SumaComponent } from './pages/aritmetica/suma/suma.component';
+import { RestaComponent } from './pages/aritmetica/resta/resta.component'; // a plugin
 
 FullCalendarModule.registerPlugins([ // register FullCalendar plugins
   dayGridPlugin,
@@ -116,6 +119,9 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     ButtonDateRangeComponent,
     MultiplicacionComponent,
     ModalBasicComponent,
+    DivisionComponent,
+    SumaComponent,
+    RestaComponent,
   ],
   imports: [
     BrowserModule,
